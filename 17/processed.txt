@@ -1,0 +1,221 @@
+Statistical profiling result from isolate-0x558602180bd0-911122-v8.log, (6271 ticks, 102 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   1341   21.4%          /usr/lib/libnode.so.115
+    129    2.1%          /usr/lib/libc.so.6
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+   4175   66.6%   87.0%  JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+     10    0.2%    0.2%  JS: ^dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+      1    0.0%    0.0%  JS: *<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:91:24
+      1    0.0%    0.0%  JS: *<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:71:56
+
+ [C++]:
+   ticks  total  nonlib   name
+    215    3.4%    4.5%  __mmap@@GLIBC_PRIVATE
+     93    1.5%    1.9%  __write@@GLIBC_2.2.5
+     66    1.1%    1.4%  node::builtins::BuiltinLoader::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     51    0.8%    1.1%  __munmap@@GLIBC_PRIVATE
+     28    0.4%    0.6%  __madvise@@GLIBC_PRIVATE
+     19    0.3%    0.4%  __mprotect@@GLIBC_PRIVATE
+     12    0.2%    0.2%  pthread_cond_signal@@GLIBC_2.3.2
+      5    0.1%    0.1%  fwrite@@GLIBC_2.2.5
+      3    0.0%    0.1%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      3    0.0%    0.1%  node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.0%    0.1%  fputc@@GLIBC_2.2.5
+      3    0.0%    0.1%  __pthread_mutex_lock@GLIBC_2.2.5
+      2    0.0%    0.0%  std::ostream::sentry::sentry(std::ostream&)
+      1    0.0%    0.0%  std::ostream::put(char)
+      1    0.0%    0.0%  std::__use_cache<std::__numpunct_cache<char> >::operator()(std::locale const&) const [clone .isra.0]
+      1    0.0%    0.0%  std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+      1    0.0%    0.0%  operator delete(void*, unsigned long)
+      1    0.0%    0.0%  node::options_parser::GetCLIOptions(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  __tls_get_addr@@GLIBC_2.3
+      1    0.0%    0.0%  __pthread_rwlock_destroy@GLIBC_2.2.5
+      1    0.0%    0.0%  __libc_malloc@@GLIBC_2.2.5
+      1    0.0%    0.0%  _IO_file_xsputn@@GLIBC_2.2.5
+
+ [Summary]:
+   ticks  total  nonlib   name
+   4187   66.8%   87.2%  JavaScript
+    512    8.2%   10.7%  C++
+    160    2.6%    3.3%  GC
+   1470   23.4%          Shared libraries
+    102    1.6%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    215   45.8%    3.4%  __mmap@@GLIBC_PRIVATE
+     69   14.7%    1.1%  __write@@GLIBC_2.2.5
+     66   14.1%    1.1%  node::builtins::BuiltinLoader::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     50   10.7%    0.8%  __munmap@@GLIBC_PRIVATE
+     28    6.0%    0.4%  __madvise@@GLIBC_PRIVATE
+     19    4.1%    0.3%  __mprotect@@GLIBC_PRIVATE
+      5    1.1%    0.1%  node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.6%    0.0%  node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.4%    0.0%  std::ostream::sentry::sentry(std::ostream&)
+      2    0.4%    0.0%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      2    0.4%    0.0%  fwrite@@GLIBC_2.2.5
+      2    0.4%    0.0%  __pthread_mutex_lock@GLIBC_2.2.5
+      1    0.2%    0.0%  std::__use_cache<std::__numpunct_cache<char> >::operator()(std::locale const&) const [clone .isra.0]
+      1    0.2%    0.0%  std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+      1    0.2%    0.0%  node::options_parser::GetCLIOptions(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.2%    0.0%  fputc@@GLIBC_2.2.5
+      1    0.2%    0.0%  __tls_get_addr@@GLIBC_2.3
+      1    0.2%    0.0%  __libc_malloc@@GLIBC_2.2.5
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   4175   66.6%  JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+   4175  100.0%    JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+   4175  100.0%      JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+   4175  100.0%        JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+   4175  100.0%          JS: ~Module.load node:internal/modules/cjs/loader:1079:33
+   4175  100.0%            JS: ~Module._load node:internal/modules/cjs/loader:867:24
+
+   1341   21.4%  /usr/lib/libnode.so.115
+   1193   89.0%    /usr/lib/libnode.so.115
+   1144   95.9%      JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+   1144  100.0%        JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+   1144  100.0%          JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+   1144  100.0%            JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+     30    2.2%    JS: ^dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+     30  100.0%      JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+     30  100.0%        JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+     30  100.0%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+     30  100.0%            JS: ~Module.load node:internal/modules/cjs/loader:1079:33
+
+    215    3.4%  __mmap@@GLIBC_PRIVATE
+    215  100.0%    /usr/lib/libnode.so.115
+    215  100.0%      JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+    215  100.0%        JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+    215  100.0%          JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+    215  100.0%            JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+
+    129    2.1%  /usr/lib/libc.so.6
+    106   82.2%    /usr/lib/libnode.so.115
+    103   97.2%      JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+    103  100.0%        JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+    103  100.0%          JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+    103  100.0%            JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+
+    102    1.6%  UNKNOWN
+     64   62.7%    JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+     64  100.0%      JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+     64  100.0%        JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+     64  100.0%          JS: ~Module.load node:internal/modules/cjs/loader:1079:33
+     64  100.0%            JS: ~Module._load node:internal/modules/cjs/loader:867:24
+     21   20.6%    JS: ^dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+     21  100.0%      JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+     21  100.0%        JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+     21  100.0%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+     21  100.0%            JS: ~Module.load node:internal/modules/cjs/loader:1079:33
+      9    8.8%    JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+      9  100.0%      JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+      9  100.0%        JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+      9  100.0%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+      9  100.0%            JS: ~Module.load node:internal/modules/cjs/loader:1079:33
+      4    3.9%    JS: ^neigbors /home/codedsakura/Documents/Programming/AoC2023/17/A.js:11:19
+      4  100.0%      JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+      4  100.0%        JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+      4  100.0%          JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+      4  100.0%            JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+
+     93    1.5%  __write@@GLIBC_2.2.5
+     69   74.2%    /usr/lib/libnode.so.115
+     63   91.3%      JS: *dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+     63  100.0%        JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+     63  100.0%          JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+     63  100.0%            JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+      1    1.4%      JS: ~initializeCJSLoader node:internal/process/pre_execution:659:29
+      1  100.0%        JS: ~setupUserModules node:internal/process/pre_execution:161:26
+      1  100.0%          JS: ~prepareExecution node:internal/process/pre_execution:70:26
+      1  100.0%            JS: ~prepareMainThreadExecution node:internal/process/pre_execution:54:36
+      1    1.4%      JS: ~Readable.removeListener node:internal/streams/readable:965:45
+      1  100.0%        JS: ~value node:internal/console/constructor:276:20
+      1  100.0%          JS: ~log node:internal/console/constructor:378:6
+      1  100.0%            /usr/lib/libnode.so.115
+      1    1.4%      JS: ~<anonymous> node:net:1:1
+      1  100.0%        JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1  100.0%          JS: ^requireBuiltin node:internal/bootstrap/realm:414:24
+      1  100.0%            JS: ~<anonymous> node:tty:1:1
+      1    1.4%      JS: ~<anonymous> node:internal/bootstrap/node:1:1
+      1    1.4%      JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:28:12
+      1  100.0%        /usr/lib/libnode.so.115
+      1  100.0%          JS: ~neigbors /home/codedsakura/Documents/Programming/AoC2023/17/A.js:11:19
+      1  100.0%            JS: ^dist /home/codedsakura/Documents/Programming/AoC2023/17/A.js:10:14
+      1    1.4%      JS: ~<anonymous> /home/codedsakura/Documents/Programming/AoC2023/17/A.js:1:1
+      1  100.0%        JS: ~Module._compile node:internal/modules/cjs/loader:1195:37
+      1  100.0%          JS: ~Module._extensions..js node:internal/modules/cjs/loader:1250:37
+      1  100.0%            JS: ~Module.load node:internal/modules/cjs/loader:1079:33
+
+     66    1.1%  node::builtins::BuiltinLoader::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     66  100.0%    /usr/lib/libnode.so.115
+     55   83.3%      JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+     37   67.3%        JS: ^requireBuiltin node:internal/bootstrap/realm:414:24
+      9   24.3%          JS: ~<anonymous> node:internal/bootstrap/switches/is_main_thread:1:1
+      5   13.5%          JS: ~<anonymous> node:internal/fs/promises:1:1
+      5  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      4   10.8%          JS: ~<anonymous> node:tty:1:1
+      4  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      3    8.1%          JS: ~<anonymous> node:internal/streams/duplex:1:1
+      3  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      2    5.4%          JS: ~<anonymous> node:stream:1:1
+      2  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      2    5.4%          JS: ~<anonymous> node:net:1:1
+      2  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      2    5.4%          JS: ~<anonymous> node:internal/bootstrap/web/exposed-wildcard:1:1
+      2    5.4%          JS: ~<anonymous> node:fs:1:1
+      2  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    2.7%          JS: ~lazyLoadStreams node:fs:2990:25
+      1  100.0%            JS: ~get ReadStream node:fs:3133:17
+      1    2.7%          JS: ~<anonymous> node:internal/streams/operators:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    2.7%          JS: ~<anonymous> node:internal/streams/destroy:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    2.7%          JS: ~<anonymous> node:internal/readline/interface:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    2.7%          JS: ~<anonymous> node:internal/modules/esm/utils:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    2.7%          JS: ~<anonymous> node:internal/fs/streams:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    2.7%          JS: ~<anonymous> node:internal/event_target:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    2.7%          JS: ~<anonymous> node:internal/blob:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+     18   32.7%        JS: ~requireBuiltin node:internal/bootstrap/realm:414:24
+      3   16.7%          JS: ~setupBuffer node:internal/bootstrap/node:393:21
+      3  100.0%            JS: ~<anonymous> node:internal/bootstrap/node:1:1
+      3   16.7%          JS: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      3  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      2   11.1%          JS: ~setupProcessObject node:internal/bootstrap/node:352:28
+      2  100.0%            JS: ~<anonymous> node:internal/bootstrap/node:1:1
+      2   11.1%          JS: ~<anonymous> node:internal/process/task_queues:1:1
+      2  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      2   11.1%          JS: ~<anonymous> node:internal/process/execution:1:1
+      2  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      2   11.1%          JS: ~<anonymous> node:buffer:1:1
+      2  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    5.6%          JS: ~<anonymous> node:path:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    5.6%          JS: ~<anonymous> node:internal/url:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    5.6%          JS: ~<anonymous> node:internal/console/global:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    5.6%          JS: ~<anonymous> node:internal/bootstrap/node:1:1
+     11   16.7%      JS: ~compileForInternalLoader node:internal/bootstrap/realm:377:27
+     11  100.0%        JS: ~requireBuiltin node:internal/bootstrap/realm:414:24
+      6   54.5%          JS: ~<anonymous> node:internal/timers:1:1
+      6  100.0%            JS: ~compileForInternalLoader node:internal/bootstrap/realm:377:27
+      3   27.3%          JS: ~setupPrepareStackTrace node:internal/bootstrap/realm:435:32
+      3  100.0%            JS: ~<anonymous> node:internal/bootstrap/realm:1:1
+      1    9.1%          JS: ~<anonymous> node:internal/validators:1:1
+      1  100.0%            JS: ~compileForInternalLoader node:internal/bootstrap/realm:377:27
+      1    9.1%          JS: ~<anonymous> node:internal/bootstrap/node:1:1
+
