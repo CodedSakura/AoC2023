@@ -5,7 +5,7 @@ default:
 
 start:
 	mkdir $(DAY)
-	touch $(DAY)/{A.hs,input.txt,test.txt}
+	touch $(DAY)/{A.js,input.txt,test.txt}
 	@echo "Starting day $(DAY)"
 
 end:
