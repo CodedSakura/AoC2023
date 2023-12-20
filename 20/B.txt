@@ -1,0 +1,21 @@
+part 2 done by hand + graph
+
+broadcaster -->
+	%lr -> &mj -> &bt -|> &rs
+	%lf -> &rd -> &fr -|> &rs
+	%hh -> &qs -> &
+	%bp
+
+&mj: 
+	lr
+	pz
+	vq
+	qm
+	xn
+	qh
+	sq
+	mf
+	hz
+	pc
+	mr
+	js
