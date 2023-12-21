@@ -1,6 +1,7 @@
 const { readFileSync } = require("fs");
 
 const contents = readFileSync("input.alt.txt", { encoding: "utf-8" }).split("\n")
+// 3862 33638 92802
 // 601441063166538
 
 // const contents = `
@@ -119,9 +120,11 @@ contents.forEach((r, y) => r.split("").forEach((c, x) => {
 
 // const leftDiamond = odd - diamond;
 
+// 3738 33270 92194
 
 // const n = Math.floor(18 / 7) - 1;
-const n = Math.floor(26501365 / 131) - 1;
+const n = Math.floor(327 / 131) - 1;
+// const n = Math.floor(26501365 / 131) - 1;
 
 console.log(`o=${odd}, e=${even}, d=${diamond}, i=${invDiamond}, l=${leftDiamond}, n=${n}`);
 
