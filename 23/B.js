@@ -101,15 +101,29 @@ const graph = makeGraph();
 
 function bfs(n, visited) {
 	let edges = graph.get(n).filter(({ e }) => !visited.has(e));
-	return Math.max(0, ...edges.map(({ e, w }) => w + bfs(e, new Set([...visited, n]))));
+	const r = edges.map(({ e, w }) => {
+			const [ hw, he ] = bfs(e, new Set([...visited, n]));
+			return [ w + hw, [e, ...he] ]
+		})
+		.reduce(([acc, he], [w, e]) => w > acc ? [ w, e ] : [ acc, he ], [ 0, [] ]);
+	// if (r[0] === 154) console.log(path, r[1]);
+	return [ Math.max(0, r[0]), (r[1] ?? []) ];
 }
-console.log(bfs(start, new Set()));
+const [ res, path ] = bfs(start, new Set(), [ start ]);
+console.log(res);
+path.unshift(start);
 
 // graphviz
 const toPos=n=>`${n%width};${Math.floor(n/width)}`
 let graphviz = "graph {layout=neato; model=mds; edge [len=2]\n";
 for (const [n, e] of graph) {
-	graphviz += `${n} [label="${toPos(n)}\\n${n}"]; ${e.filter(({ e }) => e > n).map(({ e, w }) => `${n} -- ${e} [label=${w}];`).join(" ")}\n`;
+	const edges = e
+		.filter(({ e }) => e > n)
+		.map(({ e, w }) => {
+			const isPath = path[path.indexOf(n)+1] === e || path[path.indexOf(e)+1] === n;
+			return `${n} -- ${e} [label=${w}${isPath ? " color=red penwidth=2" : ""}];`;
+		});
+	graphviz += `${n} [label="${toPos(n)}\\n${n}"]; ${edges.join(" ")}\n`;
 }
 graphviz += "}";
 writeFileSync("B.dot", graphviz);
