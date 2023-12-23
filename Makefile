@@ -6,7 +6,7 @@ default:
 start:
 	mkdir $(DAY)
 	touch $(DAY)/{A.js,input.txt,test.txt}
-	printf 'const { readFileSync } = require("fs");\n\nconst contents = readFileSync("input.txt", { encoding: "utf-8" })\n' > $(DAY)/A.js
+	printf 'const { readFileSync } = require("fs");\n\nconst contents = readFileSync("test.txt", { encoding: "utf-8" })\n' > $(DAY)/A.js
 	subl $(DAY)/{A.js,test.txt}
 	@echo "Starting day $(DAY)"
 
